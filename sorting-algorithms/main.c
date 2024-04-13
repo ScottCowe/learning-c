@@ -10,7 +10,7 @@ int main() {
 
   printf("\n");
 
-  bubbleSort(nums, 10);
+  insertionSort(nums, 10);
 
   for (int i = 0; i < 10; i++) {
     printf("%d ", nums[i]);
@@ -38,5 +38,19 @@ void bubbleSort(int *array, int size) {
     }
 
     n -= 1;
+  }
+}
+
+void insertionSort(int *array, int size) {
+  for (int i = 1; i < size; i++) {
+    int index = i;
+    int value = array[i];
+
+    while (index > 0 && value < array[index - 1]) {
+      array[index] = array[index - 1];
+      index -= 1;
+    }
+
+    array[index] = value;
   }
 }
